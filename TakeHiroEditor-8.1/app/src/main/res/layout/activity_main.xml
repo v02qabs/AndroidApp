@@ -8,9 +8,8 @@
 
 <EditText
 android:id="@+id/editor"
-android:width_layout="fill_parent"
-android:height_layout="fill_parent"
-android:hint="テキストを入力してください。"/>
-
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+    tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
