@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TakeHiroEditor</string>
+    <string name="hint_editor">テキストを入力してください。</string>
+</resources>
