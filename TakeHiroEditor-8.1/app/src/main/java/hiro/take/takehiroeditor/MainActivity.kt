@@ -21,9 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         settingPermission()
-        /*val e_text1 = findViewById<EditText>(R.id.editor
+        val e_text1 = findViewById<EditText>(R.id.editor
         ) as EditText
-*/
         //e_text1.setText("Hello")
     }
     fun mygtext(message:String)
