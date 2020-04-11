@@ -1,0 +1,2 @@
+rootProject.name='MyC++NativeByKotlin'
+include ':app'
