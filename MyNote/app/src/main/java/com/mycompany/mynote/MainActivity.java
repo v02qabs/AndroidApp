@@ -2,30 +2,19 @@ package com.mycompany.mynote;
 
 import android.app.*;
 import android.os.*;
-import org.apache.http.client.utils.*;
-import android.content.*;
-import android.widget.*;
-import java.lang.*;
 import android.support.v7.app.*;
+import android.widget.*;
+
 public class MainActivity extends Activity 
 {
+	private Toolbar tbar;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-		try
-		{
-			makeing_thread();
-        }catch(Exception error)
-		{
-			
-		}//setContentView(R.layout.main);
-	}
-	private void makeing_thread()
-	{
-		MyRunnable mr = new MyRunnable(getApplicationContext());
-		mr.start();
-	}
+        setContentView(R.layout.main);
+		tbar = (Toolbar)findViewById(R.id.tbar);
+		tbar.setTitle("MyNote");
 	
+    }
 }
-

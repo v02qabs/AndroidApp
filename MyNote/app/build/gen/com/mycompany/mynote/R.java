@@ -2221,17 +2221,17 @@ containing a value of this type.
         public static final int action_bar_spinner=0x7f0a0007;
         public static final int action_bar_subtitle=0x7f0a0042;
         public static final int action_bar_title=0x7f0a0041;
-        public static final int action_container=0x7f0a0073;
+        public static final int action_container=0x7f0a0074;
         public static final int action_context_bar=0x7f0a0064;
-        public static final int action_divider=0x7f0a007e;
-        public static final int action_image=0x7f0a0074;
+        public static final int action_divider=0x7f0a007f;
+        public static final int action_image=0x7f0a0075;
         public static final int action_menu_divider=0x7f0a0008;
         public static final int action_menu_presenter=0x7f0a0009;
         public static final int action_mode_bar=0x7f0a0060;
         public static final int action_mode_bar_stub=0x7f0a005f;
         public static final int action_mode_close_button=0x7f0a0043;
-        public static final int action_text=0x7f0a0075;
-        public static final int actions=0x7f0a007f;
+        public static final int action_text=0x7f0a0076;
+        public static final int actions=0x7f0a0080;
         public static final int activity_chooser_view_content=0x7f0a0044;
         public static final int add=0x7f0a002c;
         public static final int alertTitle=0x7f0a0057;
@@ -2246,7 +2246,7 @@ containing a value of this type.
         public static final int center_horizontal=0x7f0a0011;
         public static final int center_vertical=0x7f0a0012;
         public static final int checkbox=0x7f0a005a;
-        public static final int chronometer=0x7f0a007d;
+        public static final int chronometer=0x7f0a007e;
         public static final int clip_horizontal=0x7f0a0013;
         public static final int clip_vertical=0x7f0a0014;
         public static final int collapseActionView=0x7f0a003d;
@@ -2267,10 +2267,10 @@ containing a value of this type.
         public static final int home=0x7f0a000a;
         public static final int homeAsUp=0x7f0a0027;
         public static final int icon=0x7f0a0049;
-        public static final int icon_group=0x7f0a0080;
+        public static final int icon_group=0x7f0a0081;
         public static final int ifRoom=0x7f0a003e;
         public static final int image=0x7f0a0046;
-        public static final int info=0x7f0a0079;
+        public static final int info=0x7f0a007a;
         public static final int italic=0x7f0a0022;
         public static final int left=0x7f0a0019;
         public static final int line1=0x7f0a0000;
@@ -2283,16 +2283,16 @@ containing a value of this type.
         public static final int never=0x7f0a003f;
         public static final int none=0x7f0a001d;
         public static final int normal=0x7f0a0023;
-        public static final int notification_background=0x7f0a007b;
-        public static final int notification_main_column=0x7f0a0077;
-        public static final int notification_main_column_container=0x7f0a0076;
+        public static final int notification_background=0x7f0a007c;
+        public static final int notification_main_column=0x7f0a0078;
+        public static final int notification_main_column_container=0x7f0a0077;
         public static final int parentPanel=0x7f0a004c;
         public static final int progress_circular=0x7f0a000b;
         public static final int progress_horizontal=0x7f0a000c;
         public static final int radio=0x7f0a005c;
         public static final int right=0x7f0a001a;
-        public static final int right_icon=0x7f0a007a;
-        public static final int right_side=0x7f0a0078;
+        public static final int right_icon=0x7f0a007b;
+        public static final int right_side=0x7f0a0079;
         public static final int screen=0x7f0a002e;
         public static final int scrollIndicatorDown=0x7f0a0052;
         public static final int scrollIndicatorUp=0x7f0a004e;
@@ -2322,11 +2322,12 @@ containing a value of this type.
         public static final int submit_area=0x7f0a006e;
         public static final int tabMode=0x7f0a0025;
         public static final int tag_transition_group=0x7f0a0002;
+        public static final int tbar=0x7f0a0073;
         public static final int text=0x7f0a0003;
         public static final int text2=0x7f0a0004;
         public static final int textSpacerNoButtons=0x7f0a0051;
         public static final int textSpacerNoTitle=0x7f0a0050;
-        public static final int time=0x7f0a007c;
+        public static final int time=0x7f0a007d;
         public static final int title=0x7f0a0005;
         public static final int titleDividerNoCustom=0x7f0a0058;
         public static final int title_template=0x7f0a0056;
@@ -2763,12 +2764,6 @@ containing a value of this type.
         public static final int Widget_Compat_NotificationActionContainer=0x7f050005;
         public static final int Widget_Compat_NotificationActionText=0x7f050006;
         public static final int Widget_Support_CoordinatorLayout=0x7f050000;
-        public static final int my_actionbar_style=0x7f050157;
-        /** 
-    <style name="AppTheme" parent="@android:style/Theme.Material.Light">
-	</style>
-         */
-        public static final int my_theme=0x7f050156;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.
