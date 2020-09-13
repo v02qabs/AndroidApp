@@ -1,13 +1,23 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="horizontal">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="horizontal">
 
-	
 	<Button
 		android:background="@drawable/ic_launcher"
-		android:layout_width="30dp"
-		android:layout_height="30dp"/>
-	
-	
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:text=""/>
+
+	<Button
+		android:background="@drawable/menu"
+		android:layout_gravity="right"
+		android:text=""
+		android:layout_weight=""
+		/>
+
 </LinearLayout>
+
