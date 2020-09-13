@@ -9,7 +9,8 @@
 		android:id="@+id/tbar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:background="#000000"/>
+		android:background="#000000"
+		android:titleTextColor="#ffffff"/>
 
 	<TextView
 		android:text="@string/hello_world"
