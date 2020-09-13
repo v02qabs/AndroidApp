@@ -12,9 +12,7 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-		tbar = (Toolbar)findViewById(R.id.tbar);
-		tbar.setTitle("MyNote");
-	
+
+		setContentView(R.layout.main);
     }
 }

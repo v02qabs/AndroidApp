@@ -10,12 +10,11 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:background="#000000"
-		android:titleTextColor="#ffffff"/>
-
-	<TextView
-		android:text="@string/hello_world"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"/>
+		android:titleTextColor="#ffffff"
+		android:title="MyNote">
+		<include
+			layout="@layout/t_main"/>
+	</Toolbar>
 
 </LinearLayout>
 
