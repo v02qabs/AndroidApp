@@ -7,13 +7,11 @@
 
 	<Toolbar
 		android:id="@+id/tbar"
-		android:layout_width="match_parent"
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:background="#000000"
 		android:titleTextColor="#ffffff"
 		android:title="MyNote">
-		<include
-			layout="@layout/t_main"/>
 	</Toolbar>
 
 </LinearLayout>

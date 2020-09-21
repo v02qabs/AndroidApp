@@ -15,8 +15,8 @@
 	<Button
 		android:background="@drawable/menu"
 		android:layout_gravity="right"
-		android:text=""
-		android:layout_weight=""
+		android:text="file"
+		android:layout_weight="2"
 		/>
 
 </LinearLayout>

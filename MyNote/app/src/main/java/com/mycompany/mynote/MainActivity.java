@@ -14,5 +14,7 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.main);
+		setActionBar((Toolbar)findViewById(R.id.tbar));
+		
     }
 }
