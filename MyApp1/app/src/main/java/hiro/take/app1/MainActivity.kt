@@ -10,30 +10,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import hiro.take.app1.ui.theme.MyApp1Theme
+import android.webkit.WebView;
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_layout);
-        val webView:WebView = findViewById(R.id.webview);
-        webView.loadUrl("http://hirotakeakesi.work");
+	val mywebview = WebView(this);
+	mywebview.loadUrl("http://hirotakeakesi.work/index.html");
 
-    }
+	setContentView(mywebview);
+	}
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-            text = "Hello $name!",
-            modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyApp1Theme {
-        Greeting("Android")
-    }
-}
