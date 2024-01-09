@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 	val mywebview = WebView(this);
-	mywebview.loadUrl("http://hirotakeakesi.work/index.html");
+	mywebview.loadUrl("http://hirotakeakesi.work/");
 
 	setContentView(mywebview);
 	}
