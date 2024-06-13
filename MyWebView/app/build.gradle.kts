@@ -1,7 +1,9 @@
 plugins {
     id("com.android.application")
 }
-
+dependencies {
+    implementation ("com.google.android.material:material:1.4.0")
+}
 android {
     namespace = "com.hiro.mywebview"
     compileSdk = 34

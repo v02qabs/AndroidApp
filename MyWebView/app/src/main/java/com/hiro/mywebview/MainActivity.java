@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebSettings;
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends Activity {
 
@@ -17,6 +17,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+	FloatingActionButton fab = findViewById(R.id.fab);
+
 
         webView = findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());  // 画面遷移を WebView 内で処理する
