@@ -6,8 +6,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebSettings;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-public class MainActivity extends Activity {
+import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 1;
 
@@ -18,9 +21,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-	FloatingActionButton fab = findViewById(R.id.fab);
+	
 
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         webView = findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());  // 画面遷移を WebView 内で処理する
         WebSettings webSettings = webView.getSettings();

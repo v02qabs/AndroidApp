@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "hiro.take.mymanager1"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "hiro.take.mymanager1"
         minSdk = 29
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
