@@ -1,19 +1,10 @@
 package com.hiro.take.mywebview
 
-import android.Manifest
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.net.Uri
-import android.os.Build
+import android.app.Activity
 import android.os.Bundle
-import android.os.Environment
-import android.provider.Settings
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import android.app.Activity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -28,73 +19,38 @@ import java.net.URL
 class MainActivity : Activity() {
 
     private lateinit var urlEditText: EditText
-		private lateinit var download_local_Text : EditText
-   
+    private lateinit var downloadLocalText: EditText
     private lateinit var downloadButton: Button
-    private val REQUEST_STORAGE_PERMISSION = 1001
-		
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
-						download_local_Text = findViewById(R.id.download_local_Text)
+        
         urlEditText = findViewById(R.id.urlEditText)
-					 
+        downloadLocalText = findViewById(R.id.download_local_Text)
         downloadButton = findViewById(R.id.downloadButton)
-						
+
         downloadButton.setOnClickListener {
-            if (checkStoragePermission()) {
-                downloadFile(urlEditText.text.toString(), download_local_Text.text.toString())
+            val fileUrl = urlEditText.text.toString()
+            val fileName = downloadLocalText.text.toString()
+            if (fileUrl.isNotEmpty() && fileName.isNotEmpty()) {
+                downloadFile(fileUrl, fileName)
             } else {
-                requestStoragePermission()
+                Toast.makeText(this, "URLまたはファイル名を入力してください", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun checkStoragePermission(): Boolean {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            Environment.isExternalStorageManager()
-        } else {
-            val result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            result == PackageManager.PERMISSION_GRANTED
-        }
-    }
-
-    private fun requestStoragePermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            try {
-                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                intent.data = Uri.parse("package:$packageName")
-                startActivityForResult(intent, 2296)
-            } catch (e: Exception) {
-                val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
-                startActivityForResult(intent, 2296)
-            }
-        } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), REQUEST_STORAGE_PERMISSION)
-        }
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_STORAGE_PERMISSION) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                downloadFile(urlEditText.text.toString())
-            } else {
-                Toast.makeText(this, "ストレージ権限が拒否されました", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun downloadFile(fileUrl: String, download_local_Text: String) {
+    private fun downloadFile(fileUrl: String, fileName: String) {
         GlobalScope.launch(Dispatchers.Main) {
             val result = withContext(Dispatchers.IO) {
-                downloadFileInBackground(fileUrl)
+                downloadFileInBackground(fileUrl, fileName)
             }
             Toast.makeText(this@MainActivity, result, Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun downloadFileInBackground(fileUrl: String): String {
+    private fun downloadFileInBackground(fileUrl: String, fileName: String): String {
         var inputStream: BufferedInputStream? = null
         var fileOutputStream: FileOutputStream? = null
         return try {
@@ -107,7 +63,9 @@ class MainActivity : Activity() {
             }
 
             inputStream = BufferedInputStream(connection.inputStream)
-            val outputFile = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), download_local_Text.getText().toString())
+            
+            // アプリ内の内部ストレージへの保存 (外部ストレージを使用しない)
+            val outputFile = File(getExternalFilesDir(null), fileName)
             fileOutputStream = FileOutputStream(outputFile)
 
             val buffer = ByteArray(1024)
@@ -130,3 +88,4 @@ class MainActivity : Activity() {
         }
     }
 }
+
