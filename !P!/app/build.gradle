@@ -1,0 +1,2 @@
+plugins { id 'com.android.application' }
+android { namespace '!PKG!'& compileSdk 34& defaultConfig { applicationId '!PKG!'& minSdk 21& targetSdk 34& versionCode 1& versionName '1.0' } }
