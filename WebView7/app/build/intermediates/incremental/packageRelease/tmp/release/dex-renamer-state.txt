@@ -1,0 +1,7 @@
+#Sat Jul 25 09:15:36 JST 2026
+base.1=/home/user/git/AndroidApp/WebView7/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
+path.1=classes2.dex
+base.0=/home/user/git/AndroidApp/WebView7/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
